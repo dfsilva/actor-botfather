@@ -1,3 +1,5 @@
+package im.actor.bots.framework.traits
+
 //package im.actor.bots.framework.traits
 //
 //import org.json.JSONObject

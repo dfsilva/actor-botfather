@@ -36,7 +36,7 @@ class BotFatherBot(scope: MagicForkScope) : MagicStatefulBot(scope) {
         }
 
         initLocalize("BotFather",
-                listOf("en", "ru", "zn"),
+                listOf("en", "ru", "zn", "pt"),
                 getUser(scope.peer.id).preferredLanguages.toTypedArray())
         enableSimpleMode(localized("message.start"), "message.unknown")
 

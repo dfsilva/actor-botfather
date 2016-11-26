@@ -1,8 +1,10 @@
 package im.actor.bots.framework.parser;
 
+import im.actor.bots.framework.parser.*;
+
 import java.util.List;
 
-public class MessageCommand extends ParsedMessage {
+public class MessageCommand extends im.actor.bots.framework.parser.ParsedMessage {
 
     private String command;
     private List<String> args;

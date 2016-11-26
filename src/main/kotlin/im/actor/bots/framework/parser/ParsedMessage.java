@@ -1,12 +1,15 @@
 package im.actor.bots.framework.parser;
 
+import im.actor.bots.framework.parser.*;
+import im.actor.bots.framework.parser.MessageText;
+
 import java.util.ArrayList;
 
 public abstract class ParsedMessage {
     public static ParsedMessage matchType(String message) {
         message = message.trim();
         if (message.startsWith("/")) {
-            String[] data = ParsingUtils.splitFirstWord(message);
+            String[] data = im.actor.bots.framework.parser.ParsingUtils.splitFirstWord(message);
             String command = data[0].substring(1);
             ArrayList<String> args = new ArrayList<String>();
             String text = "";
