@@ -1,6 +1,6 @@
 package im.actor.bots.framework.stateful
 
-import im.actor.botkit.forms.ActionForm
+//import im.actor.botkit.forms.ActionForm
 import im.actor.bots.BotMessages
 import im.actor.bots.framework.*
 import im.actor.bots.framework.traits.ModernMessage
@@ -102,62 +102,62 @@ var ExpectContext.isText: Boolean
 
     }
 
-var ExpectContext.isActionForm: Boolean
-    get() {
-        return if (body is MagicBotJsonMessage) {
-            val json = (body as MagicBotJsonMessage).json
-            val isActionFormType = json.getString("dataType") == "formSubmitted"
-            return if (isActionFormType) {
-                ActionForm.parseOption(json.getJSONObject("data").toString()).isDefined
-            } else { false }
-        } else { false }
-    }
-    private set(v) {
-
-    }
-
-
-var ExpectContext.getActionForm: ActionForm
-    get() {
-        if (body is MagicBotJsonMessage) {
-            println("================== body is MagicBotJsonMessage")
-            val json = (body as MagicBotJsonMessage).json
-            return ActionForm.parse(json.getJSONObject("data").toString())!!
-        }
-        throw RuntimeException()
-    }
-    private set(v) {
-
-    }
+//var ExpectContext.isActionForm: Boolean
+//    get() {
+//        return if (body is MagicBotJsonMessage) {
+//            val json = (body as MagicBotJsonMessage).json
+//            val isActionFormType = json.getString("dataType") == "formSubmitted"
+//            return if (isActionFormType) {
+//                ActionForm.parseOption(json.getJSONObject("data").toString()).isDefined
+//            } else { false }
+//        } else { false }
+//    }
+//    private set(v) {
+//
+//    }
 
 
+//var ExpectContext.getActionForm: ActionForm
+//    get() {
+//        if (body is MagicBotJsonMessage) {
+//            println("================== body is MagicBotJsonMessage")
+//            val json = (body as MagicBotJsonMessage).json
+//            return ActionForm.parse(json.getJSONObject("data").toString())!!
+//        }
+//        throw RuntimeException()
+//    }
+//    private set(v) {
+//
+//    }
 
-var ExpectContext.getActionFormObsolete: Optional<ActionForm>
-    get() {
-        val result = if (body is MagicBotJsonMessage) {
-            println("================== body is MagicBotJsonMessage")
-            val json = (body as MagicBotJsonMessage).json
-            val isFormType = json.getString("dataType") == "formSubmitted"
-            println("================== isFormType: $isFormType")
-            if(isFormType) {
-                println("================== in isFormType = true")
-                val form = json.getJSONObject("data").toString()
-                println("=============== form itself: $form")
-                val parsed: Option<ActionForm> = ActionForm.parseOption(form)
-                if(parsed.isDefined) {
-                    Optional.of(parsed.get())
-                } else {
-                    Optional.empty<ActionForm>()
-                }
-            } else Optional.empty<ActionForm>()
-        } else {
-            Optional.empty<ActionForm>()
-        }
-        return result
-    }
-    private set(v) {
 
-    }
+
+//var ExpectContext.getActionFormObsolete: Optional<ActionForm>
+//    get() {
+//        val result = if (body is MagicBotJsonMessage) {
+//            println("================== body is MagicBotJsonMessage")
+//            val json = (body as MagicBotJsonMessage).json
+//            val isFormType = json.getString("dataType") == "formSubmitted"
+//            println("================== isFormType: $isFormType")
+//            if(isFormType) {
+//                println("================== in isFormType = true")
+//                val form = json.getJSONObject("data").toString()
+//                println("=============== form itself: $form")
+//                val parsed: Option<ActionForm> = ActionForm.parseOption(form)
+//                if(parsed.isDefined) {
+//                    Optional.of(parsed.get())
+//                } else {
+//                    Optional.empty<ActionForm>()
+//                }
+//            } else Optional.empty<ActionForm>()
+//        } else {
+//            Optional.empty<ActionForm>()
+//        }
+//        return result
+//    }
+//    private set(v) {
+//
+//    }
 
 var ExpectContext.isCommand: Boolean
     get() {

@@ -14,4 +14,4 @@ cp -r actor-bots/* ../docker/
 cd ../..
 
 # Building docker
-docker build -t actor/bot-father .
+docker build -t diegosiuniube/bot-father .
