@@ -19,7 +19,7 @@ class BotFatherBot(scope: MagicForkScope) : MagicStatefulBot(scope) {
 
     override fun configure() {
 
-        admins.add("steve")
+        admins.add("diego")
 
         enablePersistent = false
 
